@@ -18,6 +18,12 @@ namespace Kiosc_Prototype
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "VisualizerPage",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Visualizer", action = "Index", id = UrlParameter.Optional }
+            );
         }
     }
 }
