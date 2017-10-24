@@ -25,8 +25,8 @@ namespace Kiosc_Prototype
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css",
-                      "~/Content/clockpicker.css"));
+                      "~/Content/clockpicker.css",
+                      "~/Content/Site.css"));
         }
     }
 }
