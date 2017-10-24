@@ -1,9 +1,13 @@
-﻿
+﻿@using WebMatrix.Data
 @{
     ViewData["Title"] = "Visualizer";
+    var db = Database.Open("SQLServerConnectionString");
+
+    db.Query("Describe kioscdb");
+    
 }
 
-<div class="container">
+<!--<div class="container">
     <div class="row">
         <div class="col-md-1">
             <img src="~/img/logo.png" />
@@ -20,7 +24,7 @@
             </div>
         </div>
     </nav>
-</div>
+</div>-->
 <div class="container">
     <div class="row">
         <div class="col-sm-3">
