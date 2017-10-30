@@ -24,21 +24,22 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li><a href="#">HOME</a></li>
-                        <li><a href="#">VISUALIZER</a></li>
-                        <li><a href="#">QUESTIONS</a></li>
+                        <li>@Html.ActionLink("HOME", "Index", "Home")</li>
+                        <li>@Html.ActionLink("VISUALIZER", "Visualizer", "Visualizer" )</li>
+                        
                     </ul>
                 </div>
             </div>
         </nav>
-        
             @RenderBody()
-            <hr />
-            <footer>
-                <p>&copy; @DateTime.Now.Year - KIOSC</p>
-            </footer>
-        
-    </div>
+        </div>
+        <div class="container footer">
+            <div class="row">
+                <div style="background-color: #969696">
+                    <p>&copy;KIOSC<p/>
+                </div>
+            </div>
+        </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

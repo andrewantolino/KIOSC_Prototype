@@ -1,6 +1,8 @@
 ﻿body {
     background: url(../img/bg.jpg) center center no-repeat;
     height: 100%;
+  
+    background-color: #dddddd;
 }
 
 html {
@@ -44,6 +46,11 @@ div#myNavbar.navbar-collapse.collapse {
     padding-left: 40px;
 }
 
+ul.li.btnVisualizer a{
+    padding-top: 7px;
+
+} 
+
 .btnVisualizer {
     margin: 0 auto;
     width: 100px;
@@ -58,7 +65,7 @@ div#myNavbar.navbar-collapse.collapse {
     background-color: black;
 }
 
-.btnVisualizer:focus {
+.btnVisualizer:focus  {
     background-color: aqua;
 }
 
@@ -71,22 +78,14 @@ div#myNavbar.navbar-collapse.collapse {
     text-align: center;
 }
 
-.footer {
+.container.footer {
     height: 40px;
     background-color: #969696;
-    color: white;
-    text-align: left;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
-.footer li a {
-    color: white;
-    text-decoration: none;
-}
 
-.footer ul {
-    padding-left: 10px;
-    padding-top: 10px;
-}
 
 nav .container-fluid {
     list-style-type: none;
@@ -133,10 +132,6 @@ nav .container-fluid ul li a:hover {
 
 nav .container-fluid ul li a:focus {
     background-color: orange;
-}
-
-body {
-    background-color: #dddddd;
 }
 
 img.img-responsive {

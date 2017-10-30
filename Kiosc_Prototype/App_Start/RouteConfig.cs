@@ -14,15 +14,15 @@ namespace Kiosc_Prototype
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Default",
+                name: "HOME",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
-                name: "VisualizerPage",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Visualizer", action = "Index", id = UrlParameter.Optional }
+                name: "VISUALIZER",
+                url: "{controller}/{id}",
+                defaults: new { controller = "Visualizer" }
             );
         }
     }

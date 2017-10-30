@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "DataDisplay";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<div>
+    <table id="t01">
+        <thead>
+            <th>Time</th>
+            <th>EnergyGenearated</th>
+            <th>EnergyConsumed</th>
+            <th>Temperature</th>
+            <th>Gas</th>
+        </thead>
+
+        @foreach (var item in ViewBag.data)
+        {
+
+            <tr>
+                <td>
+                    @item.time
+                </td>
+                <td>
+                    @item.EnergyGenearated
+                </td>
+                <td>
+                    @item.EnergyConsumed
+                </td>
+                <td>
+                    @item.Temperature
+                </td>
+                <td>
+                    @item.Gas
+                </td>
+            </tr>
+
+        }
+   </table>
+</div>
