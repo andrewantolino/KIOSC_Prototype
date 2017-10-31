@@ -19,5 +19,6 @@ namespace Kiosc_Prototype.Models
         public Nullable<int> EnergyConsumed { get; set; }
         public Nullable<int> Temperature { get; set; }
         public Nullable<int> Gas { get; set; }
+        public Nullable<int> Water { get; set; }
     }
 }

@@ -151,15 +151,48 @@ img.img-responsive {
     padding: 0;
 }
 
+li.list-group-item.no-border {
+   text-decoration: none;
+}
+
+li.list-group-item.no-border.options:hover {
+    background-color: #dddddd;
+}
+li.list-group-item.no-border.options:active {
+    background-color: aqua;
+    
+}
 .no-padding-right {
     padding-right: 0;
     height: 100%;
 }
 
 .display-area {
-    height: 614px;
+    height: 660px;
     width: 100%;
     background-color: #fff;
     border-radius: 4px;
     padding-bottom: 0;
+}
+
+.list-group-item.active {
+    background-color: orange;
+}
+
+.list-group-item.active:hover {
+    background-color: orange;
+}
+
+.list-group-item a {
+    text-decoration: none;
+    color: #000;
+}
+
+.list-group-item.active a {
+    text-decoration: none;
+    color: white;
+}
+
+a {
+    text-decoration: none;
 }

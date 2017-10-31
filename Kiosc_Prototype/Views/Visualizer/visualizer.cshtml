@@ -17,7 +17,7 @@
 
                     <div class="navbar-collapse collapse sidebar-navbar-collapse">
                         <h4 style="padding-left: 10px">Options</h4>
-                        <ul class="list-group">
+                        <ul class="list-group options">
                             <li class="list-group-item no-border"><a href="#">Water</a></li>
                             <li class="list-group-item no-border"><a href="#">Electricity</a></li>
                             <li class="list-group-item no-border"><a href="#">Gas</a></li>
@@ -26,7 +26,7 @@
                     <!--/.nav-collapse -->
                     <div class="navbar-collapse collapse sidebar-navbar-collapse">
                         <h4 style="padding-left: 10px">Filters</h4>
-                        <ul class="list-group">
+                        <ul class="list-group filters">
                             <li class="list-group-item no-border"><a href="#">Average</a></li>
                             <li class="list-group-item no-border"><a href="#">Minimum</a></li>
                             <li class="list-group-item no-border"><a href="#">Maximum</a></li>
@@ -67,7 +67,10 @@
                                     <span class="input-group-addon">
                                         <span class="glyphicon glyphicon-time"></span>
                                     </span>
+                                    
                                 </div>
+                                <br>
+                                <input type="button" value="submit" onclick="location.href='@Url.Action("DataDisplay", "Data")'" />
                             </li>
                             <!---<input type="range" min="1" max="12" value="1" class="slider" id="myRange">
 
@@ -82,7 +85,9 @@
                                 <br>
                                 <input type="text" id="textInput3" value="0" readonly>
                             -->
+                           
                         </ul>
+                       
                     </div>
 
                 </div>

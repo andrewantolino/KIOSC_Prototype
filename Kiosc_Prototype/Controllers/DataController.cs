@@ -14,9 +14,8 @@ namespace Kiosc_Prototype.Controllers
         public ActionResult DataDisplay()
         {
             KioscdbEntities display = new KioscdbEntities();
-
-           
             var d = display.data.ToList();
+
             ViewBag.Data = d;
             return View();
             

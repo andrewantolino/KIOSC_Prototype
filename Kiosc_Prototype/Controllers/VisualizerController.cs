@@ -16,5 +16,6 @@ namespace Kiosc_Prototype.Controllers
         {
             return View();
         }
+         
     }
 }
