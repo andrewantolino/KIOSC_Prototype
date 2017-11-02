@@ -14,8 +14,11 @@ namespace Kiosc_Prototype.Controllers
         // GET: Visualizer
         public ActionResult Visualizer()
         {
+            
             return View();
         }
+        
+        
          
     }
 }

@@ -18,18 +18,18 @@
                     <div class="navbar-collapse collapse sidebar-navbar-collapse">
                         <h4 style="padding-left: 10px">Options</h4>
                         <ul class="list-group options">
-                            <li class="list-group-item no-border"><a href="#">Water</a></li>
-                            <li class="list-group-item no-border"><a href="#">Electricity</a></li>
-                            <li class="list-group-item no-border"><a href="#">Gas</a></li>
+                            <li class="list-group-item no-border"><input name="Water" type="submit" id="submit" value="Water"/>/></li>
+                            <li class="list-group-item no-border"><input name="Temperature" type="submit" id="submit" value="Temperature"/></li>
+                            <li class="list-group-item no-border"><input name="Energy" type="submit" id="submit" value="Energy"/></li>
                         </ul>
                     </div>
                     <!--/.nav-collapse -->
                     <div class="navbar-collapse collapse sidebar-navbar-collapse">
                         <h4 style="padding-left: 10px">Filters</h4>
                         <ul class="list-group filters">
-                            <li class="list-group-item no-border"><a href="#">Average</a></li>
-                            <li class="list-group-item no-border"><a href="#">Minimum</a></li>
-                            <li class="list-group-item no-border"><a href="#">Maximum</a></li>
+                            <li class="list-group-item no-border"><input name="Average" type="submit" id="submit" value="Average"/></li>
+                            <li class="list-group-item no-border"><input name="Minimum" type="submit" id="submit" value="Minimum"/></li>
+                            <li class="list-group-item no-border"><input name="Maximum" type="submit" id="submit" value="Maximum"/></li>
                         </ul>
                     </div>
 
@@ -44,7 +44,9 @@
                                     <form action="/action_page.php">
                                         <input type="date" name="datetime">
                                     </form>
+                                </div>
                             </li>
+                            
                             <!-- <input type="range" min="1990" max="2050" value="1990" class="slider" id="myRange">
 
                                 <input type="range" name="rangeInput" min="1990" max="2050" onchange="updateTextInput(this.value);">
