@@ -7,6 +7,6 @@ namespace Kiosc_Prototype.Models
 {
     public class options
     {
-
+       
     }
 }

@@ -1,5 +1,180 @@
 ﻿
+<script type="text/javascript">
 
+    $(document).ready(function  () {
+        console.log("listo");
+        var arr = [];
+        var x;
+        var arr2 = [];
+        var mArray = [];
+       
+        var count = 0;
+
+        
+        
+        var lf;
+        var xf;
+
+        $('.options > li').click(function() {
+            x = $(this);
+            if (!(arr[0])) {
+                arr.push(x.attr('value'));
+                console.log(arr);
+            } else if (arr[0]) {
+                arr.splice(0, 1);
+                arr.push(x.attr('value'));
+            }
+            console.log(arr);
+
+        });
+
+        $('.filters > li').click(function() {
+            x = $(this);
+            if (!(arr[1])) {
+                arr.push(x.attr('value'));
+                console.log(arr);
+            } else if (arr[1]) {
+                arr.splice(1, 1);
+                arr.push(x.attr('value'));
+            }
+            console.log(arr);
+
+        });
+        $('#fromDate').change(function () {
+            x = $(this).val();
+            if (x === null) {
+
+                alert('insertdate');
+            }
+            if (!(arr[2])) {
+                arr.push(x);
+                console.log(arr);
+            } else if (arr[2]) {
+                arr.splice(2, 1);
+                arr.push(x);
+            }
+            console.log(arr);
+         });
+
+        $('#toDate').change(function () {
+            x = $(this).val();
+            if (x === null) {
+
+                alert('insertdate');
+            }
+            if (!(arr[3])) {
+                arr.push(x);
+                console.log(arr);
+            } else if (arr[3]) {
+                arr.splice(3, 1);
+                arr.push(x);
+            }
+            console.log(arr);
+        });
+        $('#toDate').change(function () {
+            x = $(this).val();
+            if (x === null) {
+
+                alert('insertdate');
+            }
+            if (!(arr[3])) {
+                arr.push(x);
+                console.log(arr);
+            } else if (arr[3]) {
+                arr.splice(3, 1);
+                arr.push(x);
+            }
+            console.log(arr);
+        });
+
+        $('.form-control').change(function () {
+            x = $(this).val();
+            if (x === null) {
+
+                alert('insertdate');
+            }
+            if (!(arr[4])) {
+                arr.push(x);
+                console.log(arr);
+            } else if (arr[4]) {
+                arr.splice(4, 1);
+                arr.push(x);
+            }
+            console.log(arr);
+        });
+               //x = $(this);
+               //arr.push(x.attr('value'));
+               //console.log(arr);
+               //if ($('.options > li').click(function () {
+               //    arr.splice(0, 1);
+               //x = $(this);
+
+               //console.log(arr);
+           
+
+        //$('.filters > li').click(function() {
+
+        //    lf = $(this);
+        //    arr.push(lf.attr('value'));
+        //    console.log(arr);
+        //    if ($('.filters > li').click(function () {
+        //        arr.splice(lf);
+        //        lf = $(this);
+        //        arr.push(lf.attr('value'));
+        //        console.log(arr);
+        //    }));
+
+                  
+        //});
+
+        if ($('#submit').click(function () {
+           
+            
+          
+            $.each(arr, function(index, value) {
+                $('.display-area').html($('.display-area').html() + '<br>' + index + '<span>' + value + '</br>');
+            });
+
+           
+
+
+            //if ($('#submit').click(function () {
+
+            //    $.each(arr2, function(index, value) {
+            //        $('.display-area').html($('.display-area').html() + '<br>' + index + '<span>' + value + '</br>');
+            //    });
+
+
+
+
+
+
+        }));
+
+
+
+        //($('.date > ').click(function () {
+
+        //    xf = $(this);
+        //    arr.push(xf.attr('value'));
+        //    console.log(arr);
+
+        //    if ($('.filters > li').click(function () {
+        //        lf = $(this);
+        //        arr.splice(xf);
+        //        lf.attr('value');
+        //        arr.push(lf.attr('value'));
+        //        console.log(arr);
+
+
+        //    }));
+
+        //}));   
+
+    });
+
+
+</script>
 <div class="container">
     <div class="row">
         <div class="col-sm-3 no-padding">
@@ -17,19 +192,20 @@
 
                     <div class="navbar-collapse collapse sidebar-navbar-collapse">
                         <h4 style="padding-left: 10px">Options</h4>
+                        
                         <ul class="list-group options">
-                            <li class="list-group-item no-border"><input name="Water" type="submit" id="submit" value="Water"/>/></li>
-                            <li class="list-group-item no-border"><input name="Temperature" type="submit" id="submit" value="Temperature"/></li>
-                            <li class="list-group-item no-border"><input name="Energy" type="submit" id="submit" value="Energy"/></li>
+                            <li class="list-group-item no-border" @*onclick="myFunction()"*@ value="water">Water</li>
+                            <li class="list-group-item no-border" @*onclick="myFunction()"*@ value="temperature">Temperature</li>
+                            <li class="list-group-item no-border" @*onclick="myFunction()"*@ value="energy">Energy</li>
                         </ul>
                     </div>
                     <!--/.nav-collapse -->
                     <div class="navbar-collapse collapse sidebar-navbar-collapse">
                         <h4 style="padding-left: 10px">Filters</h4>
                         <ul class="list-group filters">
-                            <li class="list-group-item no-border"><input name="Average" type="submit" id="submit" value="Average"/></li>
-                            <li class="list-group-item no-border"><input name="Minimum" type="submit" id="submit" value="Minimum"/></li>
-                            <li class="list-group-item no-border"><input name="Maximum" type="submit" id="submit" value="Maximum"/></li>
+                            <li class="list-group-item no-border" @*onclick="myFunction()"*@ value="average">Average</li>
+                            <li class="list-group-item no-border" @*onclick="myFunction()"*@ value="minimum">Minimum</li>
+                            <li class="list-group-item no-border" @*onclick="myFunction()"*@  value="maximum">Maximum</li>
                         </ul>
                     </div>
 
@@ -40,10 +216,16 @@
                             <!--Date picker-->
                             <li class="list-group-item">
                                 <div id="slidecontainer">
-                                    <p>Date</p>
-                                    <form action="/action_page.php">
-                                        <input type="date" name="datetime">
+                                    <p>From</p>
+                                    <form action="" >
+                                        <input type="date" name="datetime" id="fromDate">
                                     </form>
+                                    <br>
+                                    <p>To</p>
+                                    <form action="">
+                                       <input type="date" name="datetime" id="toDate">
+                                    </form>
+
                                 </div>
                             </li>
                             
@@ -65,15 +247,16 @@
 
 
                                 <div class="input-group clockpicker">
-                                    <input type="text" class="form-control" value="09:30">
+                                    <input type="text" class="form-control" value="09:30" id="time">
                                     <span class="input-group-addon">
                                         <span class="glyphicon glyphicon-time"></span>
                                     </span>
                                     
                                 </div>
                                 <br>
-                                <input type="button" value="submit" onclick="location.href='@Url.Action("DataDisplay", "Data")'" />
+                                <input type="button" id="submit" value="submit" @*onclick="location.href='@Url.Action("DataDisplay", "Data")'"*@ />
                             </li>
+                            
                             <!---<input type="range" min="1" max="12" value="1" class="slider" id="myRange">
 
                             </div>

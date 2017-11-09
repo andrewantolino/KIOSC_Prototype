@@ -11,17 +11,12 @@ namespace Kiosc_Prototype.Controllers
     public class DataController : Controller
     {
         // GET: Data
-        public ActionResult DataDisplay(string submit)
+        public ActionResult DataDisplay()
         {
-
+          
+       
             
-            //KioscdbEntities display = new KioscdbEntities();
-            //var d = display.data.ToList();
-
-            //ViewBag.Data = d;
-            
-            Response.Write(submit);
-            return View(submit);
+            return View();
 
         }
     }

@@ -197,15 +197,5 @@ a {
     text-decoration: none;
 }
 
-#submit {
-    background-color: transparent;
-    color: black;
-    border: none;
-    text-decoration: none;
-}
 
-#submit:active{
-    border: orange;
-    color: white;
-    
-}
+
