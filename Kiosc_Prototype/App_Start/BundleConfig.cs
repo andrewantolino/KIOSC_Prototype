@@ -18,11 +18,15 @@ namespace Kiosc_Prototype
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js",
+                      "~/Scripts/clockpicker.js",
+                      "~/Scripts/site.js",
+                      "~/Scripts/standalone.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/clockpicker.css",
+                      "~/Content/Site.css"));
         }
     }
 }

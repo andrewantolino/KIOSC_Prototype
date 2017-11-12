@@ -1,12 +1,17 @@
 ﻿body {
-    background-color: #dddddd;
+    background: url(../img/bg.jpg) center center no-repeat;
+    height: 100%;
 }
 
-@media (min-width: 1366px) {
+html {
+    height: 100%;
+}
+
+/*@media (min-width: 1366px) {
     .container {
         width: 985px;
     }
-}
+}*/
 
 
 
@@ -34,10 +39,10 @@ div#myNavbar.navbar-collapse.collapse {
     border-right: 1px solid white;
 }
 
-    .container-fluid ul li a {
-        padding-right: 40px;
-        padding-left: 40px;
-    }
+.container-fluid ul li a {
+    padding-right: 40px;
+    padding-left: 40px;
+}
 
 .btnVisualizer {
     margin: 0 auto;
@@ -49,13 +54,13 @@ div#myNavbar.navbar-collapse.collapse {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-    .btnVisualizer:hover {
-        background-color: black;
-    }
+.btnVisualizer:hover {
+    background-color: black;
+}
 
-    .btnVisualizer:focus {
-        background-color: aqua;
-    }
+.btnVisualizer:focus {
+    background-color: aqua;
+}
 
 .paragraph {
     margin-top: 15px;
@@ -73,109 +78,15 @@ div#myNavbar.navbar-collapse.collapse {
     text-align: left;
 }
 
-    .footer li a {
-        color: white;
-        text-decoration: none;
-    }
-
-    .footer ul {
-        padding-left: 10px;
-        padding-top: 10px;
-    }
-
-body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+.footer li a {
+    color: white;
+    text-decoration: none;
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-/* Set widths on the form inputs since otherwise they're 100% wide */
-input,
-select,
-textarea {
-    max-width: 280px;
-}
-
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
-}
-
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".jpg"] {
-    width: 100%;
-    height: 100%;
-}
-
-.carousel .item {
-    height: 650px;
-}
-
-.item img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-height: 300px;
-}
-
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
-    }
-}
-
-/* make sidebar nav vertical */
-@media (min-width: 768px) {
-    .sidebar-nav .navbar .navbar-collapse {
-        padding: 15px;
-        max-height: none;
-    }
-
-    .sidebar-nav .navbar ul {
-        float: none;
-        display: block;
-    }
-
-    .sidebar-nav .navbar li {
-        float: none;
-        display: block;
-    }
-
-        .sidebar-nav .navbar li a {
-            padding-top: 15px;
-            padding-bottom: 15px;
-        }
-}
-
-div.container {
-    width: 985px;
-    padding: 0px;
-}
-
-
-div.row {
-    background-color: white;
-    margin-right: 0px;
-}
-
-div.row, .col-md-1 {
-    width: 985px;
-    margin-left: 0px;
+.footer ul {
+    padding-left: 10px;
     padding-top: 10px;
 }
-
-    div.row .col-md-1 {
-        height: 80px;
-    }
 
 nav .container-fluid {
     list-style-type: none;
@@ -232,15 +143,28 @@ img.img-responsive {
     padding: 0px;
 }
 
-div.col-sm-2 {
-    width: 985px;
-}
-
-
-html {
+.carousel-inner img {
     width: 100%;
+    max-height: 450px;
 }
 
-/*break point*/
+.list-group-item {
+    border: none;
+}
 
+.no-padding {
+    padding: 0;
+}
 
+.no-padding-right {
+    padding-right: 0;
+    height: 100%;
+}
+
+.display-area {
+    height: 614px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 4px;
+    padding-bottom: 0;
+}

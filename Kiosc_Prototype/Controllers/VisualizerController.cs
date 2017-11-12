@@ -9,7 +9,7 @@ namespace Kiosc_Prototype.Controllers
     public class VisualizerController : Controller
     {
         // GET: Visualizer
-        public ActionResult Index()
+        public ActionResult Visualizer()
         {
             return View();
         }
