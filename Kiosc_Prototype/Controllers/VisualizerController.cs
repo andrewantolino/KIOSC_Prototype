@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Optimization;
 
 
 namespace Kiosc_Prototype.Controllers
@@ -14,13 +15,18 @@ namespace Kiosc_Prototype.Controllers
         // GET: Visualizer
         public ActionResult Visualizer()
         {
-            
+
             return View();
         }
 
-       
-        
-        
-         
+        //public JsonResult DisplayArr(string [] values)
+        //{
+        //    return ("success", JsonRequestBehavior.AllowGet);
+        //}
+
+
+
+
+
     }
 }
