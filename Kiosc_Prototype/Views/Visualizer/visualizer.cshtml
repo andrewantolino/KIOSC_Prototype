@@ -3,173 +3,126 @@
 
     $(document).ready(function  () {
         console.log("listo");
-        var arr = [];
+        var arr =
+            {"options": null,
+            "filters": null,
+            "fdate": null,
+            "tdate": null,
+            "time": null };
+        
+        //var arr = [];
+        //arr["options"] = null;
+        //arr["filters"] = null;
+        //arr["fdate"] = null; //fdate = from date
+        //arr["tdate"] = null;//tdate = to date
+        //arr["time"] = null;
         var x;
-        var arr2 = [];
-        var mArray = [];
-       
-        var count = 0;
 
-        
-        
-        var lf;
-        var xf;
+      
 
-        $('.options > li').click(function() {
-            x = $(this);
-            if (!(arr[0])) {
-                arr.push(x.attr('value'));
+      
+         $('.options > li').click(function() {
+             x = $(this);
+             
+             if (arr['options'] === null) {
+
+                 arr['options'] = x.attr('value');
                 console.log(arr);
-            } else if (arr[0]) {
-                arr.splice(0, 1);
-                arr.push(x.attr('value'));
-            }
+             } else if (arr['options'] != null) {
+                 arr['options'] = x.attr('value');
+             }
             console.log(arr);
+
 
         });
 
         $('.filters > li').click(function() {
             x = $(this);
-            if (!(arr[1])) {
-                arr.push(x.attr('value'));
+             
+            if (arr['filters'] === null) {
+
+                arr['filters'] = x.attr('value');
                 console.log(arr);
-            } else if (arr[1]) {
-                arr.splice(1, 1);
-                arr.push(x.attr('value'));
+            } else if (arr['filters'] != null) {
+                arr['filters'] = x.attr('value');
             }
             console.log(arr);
 
+
         });
+
         $('#fromDate').change(function () {
             x = $(this).val();
-            if (x === null) {
-
-                alert('insertdate');
-            }
-            if (!(arr[2])) {
-                arr.push(x);
-                console.log(arr);
-            } else if (arr[2]) {
-                arr.splice(2, 1);
-                arr.push(x);
-            }
-            console.log(arr);
-         });
-
-        $('#toDate').change(function () {
-            x = $(this).val();
-            if (x === null) {
-
-                alert('insertdate');
-            }
-            if (!(arr[3])) {
-                arr.push(x);
-                console.log(arr);
-            } else if (arr[3]) {
-                arr.splice(3, 1);
-                arr.push(x);
-            }
-            console.log(arr);
-        });
-        $('#toDate').change(function () {
-            x = $(this).val();
-            if (x === null) {
-
-                alert('insertdate');
-            }
-            if (!(arr[3])) {
-                arr.push(x);
-                console.log(arr);
-            } else if (arr[3]) {
-                arr.splice(3, 1);
-                arr.push(x);
-            }
-            console.log(arr);
-        });
-
-        $('.form-control').change(function () {
-            x = $(this).val();
-            if (x === null) {
-
-                alert('insertdate');
-            }
-            if (!(arr[4])) {
-                arr.push(x);
-                console.log(arr);
-            } else if (arr[4]) {
-                arr.splice(4, 1);
-                arr.push(x);
-            }
-            console.log(arr);
-        });
-               //x = $(this);
-               //arr.push(x.attr('value'));
-               //console.log(arr);
-               //if ($('.options > li').click(function () {
-               //    arr.splice(0, 1);
-               //x = $(this);
-
-               //console.log(arr);
-           
-
-        //$('.filters > li').click(function() {
-
-        //    lf = $(this);
-        //    arr.push(lf.attr('value'));
-        //    console.log(arr);
-        //    if ($('.filters > li').click(function () {
-        //        arr.splice(lf);
-        //        lf = $(this);
-        //        arr.push(lf.attr('value'));
-        //        console.log(arr);
-        //    }));
-
-                  
-        //});
-
-        if ($('#submit').click(function () {
-           
-            
           
-            $.each(arr, function(index, value) {
-                $('.display-area').html($('.display-area').html() + '<br>' + index + '<span>' + value + '</br>');
-            });
+             
+            if (arr['fdate'] === null) {
 
-           
-
-
-            //if ($('#submit').click(function () {
-
-            //    $.each(arr2, function(index, value) {
-            //        $('.display-area').html($('.display-area').html() + '<br>' + index + '<span>' + value + '</br>');
-            //    });
+                arr['fdate'] = x;
+                console.log(arr);
+            } else if (arr['fdate'] != null) {
+                arr['fdate'] = x;
+            }
+            console.log(arr);
 
 
+        });
+
+        $('#toDate').change(function () {
+            x = $(this).val();
 
 
+            if (arr['tdate'] === null) {
+
+                arr['tdate'] = x;
+                console.log(arr);
+            } else if (arr['tdate'] != null) {
+                arr['tdate'] = x;
+            }
+            console.log(arr);
 
 
-        }));
+        });
+       
+        $('#time').change(function () {
+            x = $(this).val();
+          
+             
+            if (arr['time'] === null) {
+
+                arr['time'] = x;
+                console.log(arr);
+            } else if (arr['time'] != null) {
+                arr['time'] = x;
+            }
+            console.log(arr);
 
 
+        });
 
-        //($('.date > ').click(function () {
+        $('#ready').click(function () {
+            arr = JSON.stringify({ 'arr': arr});
+            $.ajax({
+                url: "/Visualizer/btnSubmit",
+                type: "POST",
+                data: arr,
+                contentType: "json",
+                datatype: 'aplication/json; chartset=utf-8',
+                success: function (data) {
+                    alert(data);
+                }
+        });
+        //if ($('#submit').click(function () {
 
-        //    xf = $(this);
-        //    arr.push(xf.attr('value'));
-        //    console.log(arr);
+        //    if (!arr["options"], !arr["filters"], !arr["fdate"], !arr["tdate"], !arr['time']) {
+        //        alert('complete all the form');
+        //    }
 
-        //    if ($('.filters > li').click(function () {
-        //        lf = $(this);
-        //        arr.splice(xf);
-        //        lf.attr('value');
-        //        arr.push(lf.attr('value'));
-        //        console.log(arr);
+        //    $.each(arr, function(key, value) {
+        //        $('.display-area').html($('.display-area').html() + '<br>' + key + '<span>' + value + '</br>');
+        //    });
 
 
-        //    }));
-
-        //}));   
+        //}));
 
     });
 
@@ -194,18 +147,18 @@
                         <h4 style="padding-left: 10px">Options</h4>
                         
                         <ul class="list-group options">
-                            <li class="list-group-item no-border" @*onclick="myFunction()"*@ value="water">Water</li>
-                            <li class="list-group-item no-border" @*onclick="myFunction()"*@ value="temperature">Temperature</li>
-                            <li class="list-group-item no-border" @*onclick="myFunction()"*@ value="energy">Energy</li>
+                            <li class="list-group-item no-border" value="water" >Water</li>
+                            <li class="list-group-item no-border" value="temperature">Temperature</li>
+                            <li class="list-group-item no-border"  value="energy">Energy</li>
                         </ul>
                     </div>
                     <!--/.nav-collapse -->
                     <div class="navbar-collapse collapse sidebar-navbar-collapse">
                         <h4 style="padding-left: 10px">Filters</h4>
                         <ul class="list-group filters">
-                            <li class="list-group-item no-border" @*onclick="myFunction()"*@ value="average">Average</li>
-                            <li class="list-group-item no-border" @*onclick="myFunction()"*@ value="minimum">Minimum</li>
-                            <li class="list-group-item no-border" @*onclick="myFunction()"*@  value="maximum">Maximum</li>
+                            <li class="list-group-item no-border" value="average">Average</li>
+                            <li class="list-group-item no-border" value="minimum">Minimum</li>
+                            <li class="list-group-item no-border"  value="maximum">Maximum</li>
                         </ul>
                     </div>
 
@@ -247,14 +200,16 @@
 
 
                                 <div class="input-group clockpicker">
-                                    <input type="text" class="form-control" value="09:30" id="time">
-                                    <span class="input-group-addon">
+                                    <input type="text" class="form-control" value="3:00" id="time">
+                                    @*<span class="input-group-addon">
                                         <span class="glyphicon glyphicon-time"></span>
-                                    </span>
+                                    </span>*@
                                     
                                 </div>
                                 <br>
-                                <input type="button" id="submit" value="submit" @*onclick="location.href='@Url.Action("DataDisplay", "Data")'"*@ />
+                                <input type="button" id="ready" value="Ready"/>
+                                <br>
+                                <input type="button" id="submit" value="submit" @*onclick="location.href='@Url.Action("btnSubmit", "Visualizer")'"*@/>
                             </li>
                             
                             <!---<input type="range" min="1" max="12" value="1" class="slider" id="myRange">
@@ -289,12 +244,12 @@
 
 
 
-<script src="~/Scripts/clockpicker.js"></script>
+@*<script src="~/Scripts/clockpicker.js"></script>
 <script type="text/javascript">
     $('.clockpicker').clockpicker({
         donetext: 'Done'
     });
-</script>
+</script>*@
 
 
 
