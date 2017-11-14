@@ -18,5 +18,15 @@ namespace Kiosc_Prototype.Controllers
 
             return View();
         }
+
+        //public JsonResult DisplayArr(string [] values)
+        //{
+        //    return ("success", JsonRequestBehavior.AllowGet);
+        //}
+
+
+
+
+
     }
 }
