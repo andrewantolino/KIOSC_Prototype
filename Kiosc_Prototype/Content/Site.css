@@ -10,7 +10,7 @@ html {
 }
 
 /*@media (min-width: 1366px) {
-    .container {
+    .container.footerc{
         width: 985px;
     }
 }*/
@@ -79,10 +79,15 @@ ul.li.btnVisualizer a{
 }
 
 .container.footer {
-    height: 40px;
+   
+    left: 0;
+    bottom: 0;
     background-color: #969696;
-    padding-left: 0px;
-    padding-right: 0px;
+    height: 40px;
+    color: white;
+    text-align: left;
+    padding-left: 4px;
+    padding-top: 8px;
 }
 
 
@@ -112,10 +117,10 @@ nav .container-fluid ul li a {
     display: block;
     color: white;
     text-align: center;
-    padding-top: 9px;
-    padding-bottom: 9px;
-    padding-left: 45px;
-    padding-right: 45px;
+    /*padding-top: 9px;
+    padding-bottom: 9px;*/
+    /*padding-left: 45px;
+    padding-right: 45px;*/
     text-decoration: none;
     font-family: "museo", sans-serif;
     border: none;
@@ -123,7 +128,7 @@ nav .container-fluid ul li a {
 }
 
 nav.navbar {
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 nav .container-fluid ul li a:hover {
@@ -168,13 +173,22 @@ li.list-group-item.no-border.options:active {
 }
 
 .display-area {
-    height: 660px;
+    height: 702px;
     width: 100%;
     background-color: #fff;
     border-radius: 4px;
     padding-bottom: 0;
 }
 
+ul.list-group.options {
+   margin-bottom: 0;
+}
+ul.list-group.filters {
+    margin-bottom: 0;
+}
+ul.list-group {
+    margin-bottom: 0;
+}
 .list-group-item.active {
     background-color: orange;
 }
@@ -199,3 +213,39 @@ a {
 
 
 
+input#fromDate {
+    width: 140px;
+    color: black;
+}
+
+input#fromTime {
+    width: 140px;
+    color: black;
+}
+
+input#toDate {
+    width: 140px;
+    color: black;
+}
+
+input#toTime {
+    width: 140px;
+    color: black;
+}
+
+input#submit {
+    background-color: #dddddd;
+    border-radius: 3px;
+    border: none;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.19);
+    height: 30px;
+}
+
+    input#submit:hover {
+        background-color: #00b4e9;
+        box-shadow: 0 2px 3px 0 #008cce, 0 2px 2px 0 #008cce;
+    }
+
+    input#submit:focus {
+        background-color: #00b4e9;
+    }

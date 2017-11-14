@@ -4,11 +4,13 @@
     $(document).ready(function  () {
         console.log("listo");
         var arr =
-            {"options": null,
+        { "options": null,
             "filters": null,
             "fdate": null,
             "tdate": null,
-            "time": null };
+            "ftime": null,
+            "ttime": null
+    };
         
         //var arr = [];
         //arr["options"] = null;
@@ -67,6 +69,22 @@
 
         });
 
+        $('#fromTime').change(function () {
+            x = $(this).val();
+          
+             
+            if (arr['ftime'] === null) {
+
+                arr['ftime'] = x;
+                console.log(arr);
+            } else if (arr['ftime'] != null) {
+                arr['ftime'] = x;
+            }
+            console.log(arr);
+
+
+        });
+
         $('#toDate').change(function () {
             x = $(this).val();
 
@@ -83,34 +101,34 @@
 
         });
        
-        $('#time').change(function () {
+        $('#toTime').change(function () {
             x = $(this).val();
           
              
-            if (arr['time'] === null) {
+            if (arr['ttime'] === null) {
 
-                arr['time'] = x;
+                arr['ttime'] = x;
                 console.log(arr);
-            } else if (arr['time'] != null) {
-                arr['time'] = x;
+            } else if (arr['ttime'] != null) {
+                arr['ttime'] = x;
             }
             console.log(arr);
 
 
         });
 
-        $('#ready').click(function () {
-            arr = JSON.stringify({ 'arr': arr});
-            $.ajax({
-                url: "/Visualizer/btnSubmit",
-                type: "POST",
-                data: arr,
-                contentType: "json",
-                datatype: 'aplication/json; chartset=utf-8',
-                success: function (data) {
-                    alert(data);
-                }
-        });
+        //$('#ready').click(function () {
+        //    arr = JSON.stringify({ 'arr': arr});
+        //    $.ajax({
+        //        url: "/Visualizer/btnSubmit",
+        //        type: "POST",
+        //        data: arr,
+        //        contentType: "json",
+        //        datatype: 'aplication/json; chartset=utf-8',
+        //        success: function (data) {
+        //            alert(data);
+        //        }
+        //});
         //if ($('#submit').click(function () {
 
         //    if (!arr["options"], !arr["filters"], !arr["fdate"], !arr["tdate"], !arr['time']) {
@@ -157,26 +175,34 @@
                         <h4 style="padding-left: 10px">Filters</h4>
                         <ul class="list-group filters">
                             <li class="list-group-item no-border" value="average">Average</li>
+                            <li class="list-group-item no-border" value="total">Total</li>
                             <li class="list-group-item no-border" value="minimum">Minimum</li>
                             <li class="list-group-item no-border"  value="maximum">Maximum</li>
                         </ul>
                     </div>
 
                     <div class="navbar-collapse collapse sidebar-navbar-collapse">
-                        <h4 style="padding-left: 10px">Date Range</h4>
+                        <h4 style="padding-left: 10px">Date/Time Range</h4>
                         <ul class="list-group">
-                            <br>
-                            <!--Date picker-->
+                         <!--Date picker-->
                             <li class="list-group-item">
                                 <div id="slidecontainer">
                                     <p>From</p>
                                     <form action="" >
-                                        <input type="date" name="datetime" id="fromDate">
+                                        <input type="date" name="datetime" id="fromDate"> 
+                                        <br>
+                                        <br>
+                                        <input type="text" class="form-control" value="3:00" id="fromTime">
                                     </form>
                                     <br>
                                     <p>To</p>
                                     <form action="">
-                                       <input type="date" name="datetime" id="toDate">
+                                        <input type="date" name="datetime" id="toDate">
+                                        <br>
+                                        <br>
+                                        <input type="text" class="form-control" value="3:00" id="toTime">
+                                        <br>
+                                        <input type="button" id="submit" value="Submit" />
                                     </form>
 
                                 </div>
@@ -195,22 +221,22 @@
                             <br>
                             <input type="text" id="textInput2" value="0" readonly>
                             -->
-                            <li class="list-group-item">
+                            @*<li class="list-group-item">
                                 <p>Time</p>
 
 
                                 <div class="input-group clockpicker">
-                                    <input type="text" class="form-control" value="3:00" id="time">
+                                    <input type="text" class="form-control" value="3:00" id="time">*@
                                     @*<span class="input-group-addon">
                                         <span class="glyphicon glyphicon-time"></span>
                                     </span>*@
                                     
-                                </div>
+                                @*</div>
                                 <br>
                                 <input type="button" id="ready" value="Ready"/>
                                 <br>
-                                <input type="button" id="submit" value="submit" @*onclick="location.href='@Url.Action("btnSubmit", "Visualizer")'"*@/>
-                            </li>
+                                <input type="button" id="submit" value="submit" />
+                            </li>*@
                             
                             <!---<input type="range" min="1" max="12" value="1" class="slider" id="myRange">
 
