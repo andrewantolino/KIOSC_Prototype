@@ -1,12 +1,151 @@
-﻿@*@using WebMatrix.Data
-@{
-    ViewData["Title"] = "Visualizer";
-    var db = Database.Open("SQLServerConnectionString");
+﻿
+<script type="text/javascript">
 
-    db.Query("Describe kioscdb");
-    
-}*@
+    $(document).ready(function  () {
+        console.log("listo");
+        var arr =
+        { "options": null,
+            "filters": null,
+            "fdate": null,
+            "tdate": null,
+            "ftime": null,
+            "ttime": null
+    };
+        
+        //var arr = [];
+        //arr["options"] = null;
+        //arr["filters"] = null;
+        //arr["fdate"] = null; //fdate = from date
+        //arr["tdate"] = null;//tdate = to date
+        //arr["time"] = null;
+        var x;
 
+      
+
+      
+         $('.options > li').click(function() {
+             x = $(this);
+             
+             if (arr['options'] === null) {
+
+                 arr['options'] = x.attr('value');
+                console.log(arr);
+             } else if (arr['options'] != null) {
+                 arr['options'] = x.attr('value');
+             }
+            console.log(arr);
+
+
+        });
+
+        $('.filters > li').click(function() {
+            x = $(this);
+             
+            if (arr['filters'] === null) {
+
+                arr['filters'] = x.attr('value');
+                console.log(arr);
+            } else if (arr['filters'] != null) {
+                arr['filters'] = x.attr('value');
+            }
+            console.log(arr);
+
+
+        });
+
+        $('#fromDate').change(function () {
+            x = $(this).val();
+          
+             
+            if (arr['fdate'] === null) {
+
+                arr['fdate'] = x;
+                console.log(arr);
+            } else if (arr['fdate'] != null) {
+                arr['fdate'] = x;
+            }
+            console.log(arr);
+
+
+        });
+
+        $('#fromTime').change(function () {
+            x = $(this).val();
+          
+             
+            if (arr['ftime'] === null) {
+
+                arr['ftime'] = x;
+                console.log(arr);
+            } else if (arr['ftime'] != null) {
+                arr['ftime'] = x;
+            }
+            console.log(arr);
+
+
+        });
+
+        $('#toDate').change(function () {
+            x = $(this).val();
+
+
+            if (arr['tdate'] === null) {
+
+                arr['tdate'] = x;
+                console.log(arr);
+            } else if (arr['tdate'] != null) {
+                arr['tdate'] = x;
+            }
+            console.log(arr);
+
+
+        });
+       
+        $('#toTime').change(function () {
+            x = $(this).val();
+          
+             
+            if (arr['ttime'] === null) {
+
+                arr['ttime'] = x;
+                console.log(arr);
+            } else if (arr['ttime'] != null) {
+                arr['ttime'] = x;
+            }
+            console.log(arr);
+
+
+        });
+
+        //$('#ready').click(function () {
+        //    arr = JSON.stringify({ 'arr': arr});
+        //    $.ajax({
+        //        url: "/Visualizer/btnSubmit",
+        //        type: "POST",
+        //        data: arr,
+        //        contentType: "json",
+        //        datatype: 'aplication/json; chartset=utf-8',
+        //        success: function (data) {
+        //            alert(data);
+        //        }
+        //});
+        //if ($('#submit').click(function () {
+
+        //    if (!arr["options"], !arr["filters"], !arr["fdate"], !arr["tdate"], !arr['time']) {
+        //        alert('complete all the form');
+        //    }
+
+        //    $.each(arr, function(key, value) {
+        //        $('.display-area').html($('.display-area').html() + '<br>' + key + '<span>' + value + '</br>');
+        //    });
+
+
+        //}));
+
+    });
+
+
+</script>
 <div class="container">
     <div class="row">
         <div class="col-sm-3 no-padding">
@@ -24,34 +163,51 @@
 
                     <div class="navbar-collapse collapse sidebar-navbar-collapse">
                         <h4 style="padding-left: 10px">Options</h4>
-                        <ul class="list-group">
-                            <li class="list-group-item no-border"><a href="#">Water</a></li>
-                            <li class="list-group-item no-border"><a href="#">Electricity</a></li>
-                            <li class="list-group-item no-border"><a href="#">Gas</a></li>
+                        
+                        <ul class="list-group options">
+                            <li class="list-group-item no-border" value="water" >Water</li>
+                            <li class="list-group-item no-border" value="temperature">Temperature</li>
+                            <li class="list-group-item no-border"  value="energy">Energy</li>
                         </ul>
                     </div>
                     <!--/.nav-collapse -->
                     <div class="navbar-collapse collapse sidebar-navbar-collapse">
                         <h4 style="padding-left: 10px">Filters</h4>
-                        <ul class="list-group">
-                            <li class="list-group-item no-border"><a href="#">Average</a></li>
-                            <li class="list-group-item no-border"><a href="#">Minimum</a></li>
-                            <li class="list-group-item no-border"><a href="#">Maximum</a></li>
+                        <ul class="list-group filters">
+                            <li class="list-group-item no-border" value="average">Average</li>
+                            <li class="list-group-item no-border" value="total">Total</li>
+                            <li class="list-group-item no-border" value="minimum">Minimum</li>
+                            <li class="list-group-item no-border"  value="maximum">Maximum</li>
                         </ul>
                     </div>
 
                     <div class="navbar-collapse collapse sidebar-navbar-collapse">
-                        <h4 style="padding-left: 10px">Date Range</h4>
+                        <h4 style="padding-left: 10px">Date/Time Range</h4>
                         <ul class="list-group">
-                            <br>
-                            <!--Date picker-->
+                         <!--Date picker-->
                             <li class="list-group-item">
                                 <div id="slidecontainer">
-                                    <p>Date</p>
-                                    <form action="/action_page.php">
-                                        <input type="date" name="datetime">
+                                    <p>From</p>
+                                    <form action="" >
+                                        <input type="date" name="datetime" id="fromDate"> 
+                                        <br>
+                                        <br>
+                                        <input type="text" class="form-control" value="3:00" id="fromTime">
                                     </form>
+                                    <br>
+                                    <p>To</p>
+                                    <form action="">
+                                        <input type="date" name="datetime" id="toDate">
+                                        <br>
+                                        <br>
+                                        <input type="text" class="form-control" value="3:00" id="toTime">
+                                        <br>
+                                        <input type="button" id="submit" value="Submit" />
+                                    </form>
+
+                                </div>
                             </li>
+                            
                             <!-- <input type="range" min="1990" max="2050" value="1990" class="slider" id="myRange">
 
                                 <input type="range" name="rangeInput" min="1990" max="2050" onchange="updateTextInput(this.value);">
@@ -65,17 +221,23 @@
                             <br>
                             <input type="text" id="textInput2" value="0" readonly>
                             -->
-                            <li class="list-group-item">
+                            @*<li class="list-group-item">
                                 <p>Time</p>
 
 
                                 <div class="input-group clockpicker">
-                                    <input type="text" class="form-control" value="09:30">
-                                    <span class="input-group-addon">
+                                    <input type="text" class="form-control" value="3:00" id="time">*@
+                                    @*<span class="input-group-addon">
                                         <span class="glyphicon glyphicon-time"></span>
-                                    </span>
-                                </div>
-                            </li>
+                                    </span>*@
+                                    
+                                @*</div>
+                                <br>
+                                <input type="button" id="ready" value="Ready"/>
+                                <br>
+                                <input type="button" id="submit" value="submit" />
+                            </li>*@
+                            
                             <!---<input type="range" min="1" max="12" value="1" class="slider" id="myRange">
 
                             </div>
@@ -89,7 +251,9 @@
                                 <br>
                                 <input type="text" id="textInput3" value="0" readonly>
                             -->
+                           
                         </ul>
+                       
                     </div>
 
                 </div>
@@ -97,7 +261,7 @@
         </div>
         <div class="col-sm-9 no-padding-right">
             <div class="display-area">
-
+               
             </div>
             
         </div>
@@ -106,12 +270,12 @@
 
 
 
-<script src="~/Scripts/clockpicker.js"></script>
+@*<script src="~/Scripts/clockpicker.js"></script>
 <script type="text/javascript">
     $('.clockpicker').clockpicker({
         donetext: 'Done'
     });
-</script>
+</script>*@
 
 
 

@@ -1,6 +1,8 @@
 ﻿body {
     background: url(../img/bg.jpg) center center no-repeat;
     height: 100%;
+  
+    background-color: #dddddd;
 }
 
 html {
@@ -8,7 +10,7 @@ html {
 }
 
 /*@media (min-width: 1366px) {
-    .container {
+    .container.footerc{
         width: 985px;
     }
 }*/
@@ -44,6 +46,11 @@ div#myNavbar.navbar-collapse.collapse {
     padding-left: 40px;
 }
 
+ul.li.btnVisualizer a{
+    padding-top: 7px;
+
+} 
+
 .btnVisualizer {
     margin: 0 auto;
     width: 100px;
@@ -58,7 +65,7 @@ div#myNavbar.navbar-collapse.collapse {
     background-color: black;
 }
 
-.btnVisualizer:focus {
+.btnVisualizer:focus  {
     background-color: aqua;
 }
 
@@ -71,22 +78,19 @@ div#myNavbar.navbar-collapse.collapse {
     text-align: center;
 }
 
-.footer {
-    height: 40px;
+.container.footer {
+   
+    left: 0;
+    bottom: 0;
     background-color: #969696;
+    height: 40px;
     color: white;
     text-align: left;
+    padding-left: 4px;
+    padding-top: 8px;
 }
 
-.footer li a {
-    color: white;
-    text-decoration: none;
-}
 
-.footer ul {
-    padding-left: 10px;
-    padding-top: 10px;
-}
 
 nav .container-fluid {
     list-style-type: none;
@@ -113,10 +117,10 @@ nav .container-fluid ul li a {
     display: block;
     color: white;
     text-align: center;
-    padding-top: 9px;
-    padding-bottom: 9px;
-    padding-left: 45px;
-    padding-right: 45px;
+    /*padding-top: 9px;
+    padding-bottom: 9px;*/
+    /*padding-left: 45px;
+    padding-right: 45px;*/
     text-decoration: none;
     font-family: "museo", sans-serif;
     border: none;
@@ -124,7 +128,7 @@ nav .container-fluid ul li a {
 }
 
 nav.navbar {
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 nav .container-fluid ul li a:hover {
@@ -133,10 +137,6 @@ nav .container-fluid ul li a:hover {
 
 nav .container-fluid ul li a:focus {
     background-color: orange;
-}
-
-body {
-    background-color: #dddddd;
 }
 
 img.img-responsive {
@@ -156,15 +156,96 @@ img.img-responsive {
     padding: 0;
 }
 
+li.list-group-item.no-border {
+   text-decoration: none;
+}
+
+li.list-group-item.no-border.options:hover {
+    background-color: #dddddd;
+}
+li.list-group-item.no-border.options:active {
+    background-color: aqua;
+    
+}
 .no-padding-right {
     padding-right: 0;
     height: 100%;
 }
 
 .display-area {
-    height: 614px;
+    height: 702px;
     width: 100%;
     background-color: #fff;
     border-radius: 4px;
     padding-bottom: 0;
 }
+
+ul.list-group.options {
+   margin-bottom: 0;
+}
+ul.list-group.filters {
+    margin-bottom: 0;
+}
+ul.list-group {
+    margin-bottom: 0;
+}
+.list-group-item.active {
+    background-color: orange;
+}
+
+.list-group-item.active:hover {
+    background-color: orange;
+}
+
+.list-group-item a {
+    text-decoration: none;
+    color: #000;
+}
+
+.list-group-item.active a {
+    text-decoration: none;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+input#fromDate {
+    width: 140px;
+    color: black;
+}
+
+input#fromTime {
+    width: 140px;
+    color: black;
+}
+
+input#toDate {
+    width: 140px;
+    color: black;
+}
+
+input#toTime {
+    width: 140px;
+    color: black;
+}
+
+input#submit {
+    background-color: #dddddd;
+    border-radius: 3px;
+    border: none;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.19);
+    height: 30px;
+}
+
+    input#submit:hover {
+        background-color: #00b4e9;
+        box-shadow: 0 2px 3px 0 #008cce, 0 2px 2px 0 #008cce;
+    }
+
+    input#submit:focus {
+        background-color: #00b4e9;
+    }

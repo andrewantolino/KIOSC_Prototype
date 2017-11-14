@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <title>KIOSC Visualizer</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-</head>
+    </head>
 <body>
     <div class="container">
         <div class="img-responsive">
@@ -24,21 +24,20 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li><a href="#">HOME</a></li>
-                        <li><a href="#">VISUALIZER</a></li>
-                        <li><a href="#">QUESTIONS</a></li>
+                        <li>@Html.ActionLink("HOME", "Index", "Home")</li>
+                        <li>@Html.ActionLink("VISUALIZER", "Visualizer", "Visualizer" )</li>
+                        
                     </ul>
                 </div>
             </div>
         </nav>
-        
             @RenderBody()
-            <hr />
-            <footer>
-                <p>&copy; @DateTime.Now.Year - KIOSC</p>
-            </footer>
+        <div class="container footer">
+            <p>&copy;KIOSC 2017</p>
+        </div>
+
+        </div>
         
-    </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
