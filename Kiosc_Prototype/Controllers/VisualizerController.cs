@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Kiosc_Prototype.Models;
 
 namespace Kiosc_Prototype.Controllers
 {
@@ -11,7 +12,9 @@ namespace Kiosc_Prototype.Controllers
         // GET: Visualizer
         public ActionResult Visualizer()
         {
-            return View();
+            var service = new Gas(1, 500);
+
+            return View(service);
         }
     }
 }
