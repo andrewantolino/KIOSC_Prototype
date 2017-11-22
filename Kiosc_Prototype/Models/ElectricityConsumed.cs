@@ -7,10 +7,12 @@ namespace Kiosc_Prototype.Models
 {
     public class ElectricityConsumed
     {
-        public DateTime DateTime;
-        public int BuildingId;
-        public int MSSBValue;
-        public int DBK_L1Value;
-        public int DBK_L2Value;
+        public DateTime ReadingTime { get; set; }
+        public int BuildingId { get; set; }
+        public int MssbValue { get; set; }
+        public int DbkL1Value { get; set; }
+        public int DbkL2Value { get; set; }
+
+        public Building Building { get; set; }
     }
 }

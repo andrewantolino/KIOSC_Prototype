@@ -7,9 +7,11 @@ namespace Kiosc_Prototype.Models
 {
     public class Water
     {
-        public DateTime DateTime;
-        public int BuildingId;
-        public int WaterHot;
-        public int WaterCold;
+        public DateTime ReadingTime { get; set; }
+        public int BuildingId { get; set; }
+        public int WaterHot { get; set; }
+        public int WaterCold { get; set; }
+
+        public Building Building { get; set; }
     }
 }

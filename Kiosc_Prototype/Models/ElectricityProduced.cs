@@ -7,8 +7,10 @@ namespace Kiosc_Prototype.Models
 {
     public class ElectricityProduced
     {
-        public DateTime DateTime;
-        public int BuildingId;
-        public int ProducedValue;
+        public DateTime ReadingTime { get; set; }
+        public int BuildingId { get; set; }
+        public int ProducedValue { get; set; }
+
+        public Building Building { get; set; }
     }
 }

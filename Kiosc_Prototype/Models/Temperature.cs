@@ -7,9 +7,11 @@ namespace Kiosc_Prototype.Models
 {
     public class Temperature
     {
-        public DateTime DateTime;
-        public int RoomId;
-        public int BuildingId;
-        public double TemperatureValue;
+        public DateTime ReadingTime { get; set; }
+        public int RoomId { get; set; }
+        public int BuildingId { get; set; }
+        public double TemperatureValue { get; set; }
+
+        public Room Room { get; set; }
     }
 }

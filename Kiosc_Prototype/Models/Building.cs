@@ -7,8 +7,8 @@ namespace Kiosc_Prototype.Models
 {
     public class Building
     {
-        public int BuildingId;
-        public string BuildingName;
-        public string BuildingDesc;
+        public int BuildingId { get; set; }
+        public string BuildingName { get; set; }
+        public string BuildingDesc { get; set; }
     }
 }
