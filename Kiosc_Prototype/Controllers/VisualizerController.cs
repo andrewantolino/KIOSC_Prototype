@@ -12,9 +12,7 @@ namespace Kiosc_Prototype.Controllers
         // GET: Visualizer
         public ActionResult Visualizer()
         {
-            var service = new Gas(1, 500);
-
-            return View(service);
+            return View();
         }
     }
 }

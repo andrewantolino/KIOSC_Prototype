@@ -11,7 +11,7 @@ namespace Kiosc_Prototype.DAL
     public class ApplicationDbContext : DbContext
     {
 
-        public ApplicationDbContext() : base("Visualizer Context")
+        public ApplicationDbContext() : base("ApplicationDbContext")
         {
             
         }
@@ -21,7 +21,7 @@ namespace Kiosc_Prototype.DAL
         public DbSet<Gas> Gass { get; set; }
         public DbSet<Water> Waters { get; set; }
         public DbSet<ElectricityConsumed> ElectricityConsumeds { get; set; }
-        public DbSet<ElectricityProduced> ElectricityProdcueds { get; set; }
+        public DbSet<ElectricityProduced> ElectricityProduceds { get; set; }
         public DbSet<Temperature> Temperatures { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
