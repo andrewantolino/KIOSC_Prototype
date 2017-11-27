@@ -1,4 +1,6 @@
-﻿@*@using WebMatrix.Data
+﻿@using Kiosc_Prototype.Models
+@using Kiosc_Prototype.Controllers
+@*@using WebMatrix.Data
 @{
     ViewData["Title"] = "Visualizer";
     var db = Database.Open("SQLServerConnectionString");
@@ -99,9 +101,12 @@
         </div>
         <div class="col-sm-9 no-padding-right">
             <div class="display-area">
-                <h1>@Model.DateTime</h1>
+                <h1>@Model.Building</h1>
                 <h1>@Model.BuildingId</h1>
-                <h1>@Model.GasValue</h1>
+                <h1>@Model.WaterCold</h1>
+                <h1>@Model.WaterHot</h1>
+                <h1>@Model.ReadingTime</h1>
+
             </div>
             
         </div>

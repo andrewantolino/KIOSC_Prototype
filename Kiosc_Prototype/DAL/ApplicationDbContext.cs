@@ -11,7 +11,7 @@ namespace Kiosc_Prototype.DAL
     public class ApplicationDbContext : DbContext
     {
 
-        public ApplicationDbContext() : base("ApplicationDbContext")
+        public ApplicationDbContext() : base("Visualizer_Db")
         {
             
         }
